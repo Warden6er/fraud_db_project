@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS fraud_tb(
+CREATE TABLE IF NOT EXISTS staging_fraud(
 	transaction_id INT,
 	user_id INT,
 	amount DECIMAL,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS fraud_tb(
 	is_fraud BOOL
 );
 
-COPY fraud_tb(transaction_id, user_id, amount, transaction_type, merchant_category, country, hour, device_risk_score, ip_risk_score, is_fraud)
-FROM 'Downloads/synthetic_fraud_dataset.csv'
-DELIMITER ','
+\copy staging_fraud(transaction_id, user_id, amount, transaction_type, merchant_category, country, hour, device_risk_score, ip_risk_score, is_fraud) 
+FROM 'C"/Users/eboig/sql_project/synthetic_fraud_dataset.csv' 
+DELIMITER ',' 
 CSV HEADER;

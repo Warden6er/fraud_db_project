@@ -1,28 +1,24 @@
 CREATE TABLE IF NOT EXISTS dim_transaction(
+	transaction_key SERIAL PRIMARY KEY,
 	transaction_id INT,
 	transaction_type VARCHAR(20),
+	merchant_category VARCHAR(50),
+    hour INT,
 	is_fraud BOOL
 );
 
-INSERT INTO dim_transaction(transaction_id, transaction_type, is_fraud)
-SELECT a.transaction_id, a.transaction_type, a.is_fraud
-FROM fraud_tb as a;
+INSERT INTO dim_transaction(transaction_id, transaction_type, merchant_category, hour, is_fraud)
+SELECT DISTINCT a.transaction_id, a.transaction_type, a.merchant_category, a.hour, a.is_fraud
+FROM staging_fraud as a;
 
 
-CREATE TABLE IF NOT EXISTS dim_user(
-	user_id INT,
-	merchant_category VARCHAR(50),
-	country VARCHAR(10)
-);
 
-INSERT INTO dim_user(user_id, merchant_category, country)
-SELECT b.user_id, b.merchant_category, b.country
-FROM fraud_tb AS b;
+CREATE TABLE dim_user AS
+SELECT DISTINCT ON (user_id) 
+    user_id,
+    country
+FROM staging_fraud
+ORDER BY user_id, country;
 
-
-ALTER TABLE dim_transaction
-ADD COLUMN IF NOT EXISTS hour INT;
-
-INSERT INTO dim_transaction(hour)
-SELECT d.hour
-FROM fraud_tb as d;
+ALTER TABLE dim_user
+ADD COLUMN user_key SERIAL PRIMARY KEY;
