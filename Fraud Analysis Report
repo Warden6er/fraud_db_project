@@ -1,0 +1,55 @@
+"""
+Executive Summary
+This project analyzes financial transaction data to identify patterns associated with fraudulent activity. Using SQL, fraud rates were evaluated across transaction types, merchant categories, and device risk levels. The analysis found that ATM transactions, clothing and travel merchants, and high-risk devices exhibit the highest fraud rates. These insights support targeted fraud-prevention strategies aimed at strengthening monitoring, refining risk-scoring models, and improving early detection.
+
+Introduction
+This project explores a financial transactions dataset inspired by recent increases in scam calls and emails. The dataset contains transaction details, merchant information, fraud labels, and device risk scores. The goal is to uncover fraud patterns and provide insights that can help a financial institution improve detection and reduce losses.
+
+Business Problem
+Fraudulent transactions pose financial and operational risks, and the company needs to understand which transaction types, merchants, and device behaviors are most associated with fraud. The objective is to identify high-risk patterns to strengthen fraud detection and guide targeted prevention measures.
+
+Hypothesis
+•	Transaction Type
+Certain transaction types (e.g., online payments or wire transfers) are more prone to fraud.
+•	Merchant Category
+Fraud is more common in specific merchant categories that scammers target.
+•	Device & IP Risk
+Transactions flagged with higher device or IP risk scores correspond to higher fraud likelihood.
+
+Insights 
+Transaction Type
+•	ATM transactions have the highest fraud rate at 5.46% (138 fraud cases), while POS transactions have the lowest at 4.52% (116 fraud cases).
+•	ATM transactions are slightly more vulnerable to fraud. The company could strengthen monitoring or verification for ATM transactions to reduce losses.
+Merchant Category
+•	Clothing and travel merchants show the highest fraud rates at 5.50% and 5.26%, with a combined total of 215 fraud cases. Food merchants have the lowest rate at 4.55%.
+•	Fraud is concentrated in specific merchant categories. Prioritizing fraud checks on clothing and travel merchants could improve detection efficiency.
+Device Risk Score
+•	High-risk devices account for most fraud cases, but there are 9500 transactions classified as low risk, some of which are fraudulent.
+•	Device risk score is a strong predictor of fraud, but low-risk transactions with fraud should be investigated to ensure no loopholes in the scoring system.
+
+Root Causes 
+•	ATMs are less monitored and more exposed to physical skimming or remote hacking attempts.
+•	Scammers target high value or easily resold items like clothing or travel services.
+•	Device scoring may not capture all fraud patterns, or fraudsters may use low risk devices to evade detection.
+
+Recommendations
+•	Enhance monitoring and verification for ATM transactions to reduce the higher fraud risk.
+•	Prioritize fraud checks and alerts for clothing and travel merchants to prevent fraudulent purchases.
+•	Implement layered fraud detection across all transactions, even in low-risk segments, to catch overlooked fraud.
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
