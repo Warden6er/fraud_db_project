@@ -25,3 +25,12 @@ This project implements a **star-schema database** to manage and analyze synthet
 
 ## Outcome
 A professional, clean, and normalized database ready for fraud analysis, reporting, or integration with BI tools.
+
+## Charts
+<img width="543" height="298" alt="Screenshot 2025-11-25 191904" src="https://github.com/user-attachments/assets/f679e7a7-afcb-4636-991b-48070850e286" />
+
+
+<img width="545" height="303" alt="Screenshot 2025-11-25 191914" src="https://github.com/user-attachments/assets/34cfc07b-6e39-4d1f-b9b8-689276c74e3e" />
+
+
+<img width="551" height="344" alt="Screenshot 2025-11-25 191924" src="https://github.com/user-attachments/assets/efb76ade-5b84-47e3-b9c0-eb6f5d26cd85" />
